@@ -5,10 +5,10 @@ export class Receipt{
     public date: Date;
     public totalPrice: number;
 
-    constructor(cart: Cart){
+    constructor(cart: Cart, date: Date){
         this.cart = cart;
         this.totalPrice = this.cart.totalPrice;
-        this.date = new Date();
+        this.date = date;
     }
 
 }

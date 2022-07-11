@@ -16,7 +16,7 @@
                 <td class="col-md-9"><em> {{ currItem.name }} </em></td>
                 <td class="col-md-1 " style="text-align: center" > {{ currItem.quantity }} </td>
                 <td class="col-md-1 text-center">{{ currItem.basePrice }}</td>
-                <td class="col-md-1 text-center">{{ currItem.basePrice * currItem.quantity }}</td>
+                <td class="col-md-1 text-center">{{ (currItem.basePrice * currItem.quantity).toFixed(2) }}</td>
             </tr>
         <tr>
             <td>   </td>

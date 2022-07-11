@@ -5,8 +5,8 @@ export class itemService{
     itemChanged = new Subject<Item[]>();
 
     private items: Item[] = [
-        new Item("Test", 38, false, true, 2),
-        new Item("Calamari", 15, false, false, 5)
+        new Item("Speaker", 38, false, true, 2),
+        new Item("Calamari", 15, true, false, 5)
     ]
 
     getItems(){
