@@ -21,7 +21,7 @@
                 <td class="col-md-9">{{ currItem.isImported ? 'Yes' : 'No'}}</td>
                 <td class="col-md-1 " style="text-align: center" > {{ currItem.quantity }} </td>
                 <td class="col-md-1 text-center">{{ currItem.basePrice }}</td>
-                <td class="col-md-1 text-center">{{ currItem.basePrice * currItem.quantity }}</td>
+                <td class="col-md-1 text-center">{{ (currItem.basePrice * currItem.quantity).toFixed(2) }}</td>
                 <td>
                     <button class="btn btn-danger" type="button"
                     (click)="onDeleteItem(i)">Remove From Cart</button>
