@@ -1,0 +1,12 @@
+<div class ="row">
+    <div class = "col-xs-12">
+        <app-receipt-mini
+        *ngFor="let currReceipt of receipts; let i = index"
+        [receipt] = "currReceipt"
+        [index] = "i"
+        ></app-receipt-mini>
+    </div>
+    <div class ="col-md-7">
+        <router-outlet></router-outlet>
+     </div>
+</div>

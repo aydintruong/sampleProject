@@ -1,0 +1,62 @@
+<div>
+    <table class="table table-hover" style="margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Exempt</th>
+                <th>Imported</th>
+                <th>#</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Total</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+            *ngFor="let currItem of cart.items; let i = index"
+            [item] = "currItem"
+            [index] = "i">
+                <td class="col-md-9"><em> {{ currItem.name }} </em></td>
+                <td class="col-md-9 pull-left">{{ currItem.isExempt ? 'Yes' : 'No'}}</td>
+                <td class="col-md-9">{{ currItem.isImported ? 'Yes' : 'No'}}</td>
+                <td class="col-md-1 " style="text-align: center" > {{ currItem.quantity }} </td>
+                <td class="col-md-1 text-center">{{ currItem.basePrice }}</td>
+                <td class="col-md-1 text-center">{{ currItem.basePrice * currItem.quantity }}</td>
+                <td>
+                    <button class="btn btn-danger" type="button"
+                    (click)="onDeleteItem(i)">Remove From Cart</button>
+                    </td>
+            </tr>
+        <tr>
+            <td>   </td>
+            <td>   </td>
+            <td>   </td>
+            <td>   </td>
+            <td class="text-right">
+            <p>
+                <strong>Subtotal: </strong>
+            </p>
+            <p>
+                <strong>Tax: </strong>
+            </p></td>
+            <td class="text-center">
+            <p>
+                <strong>{{cart.basePrice}}</strong>
+            </p>
+            <p>
+                <strong>{{cart.taxPrice.toFixed(2)}}</strong>
+            </p></td>
+            <td>   </td>
+        </tr>
+        <tr>
+            <td>   </td>
+            <td>   </td>
+            <td>   </td>
+            <td>   </td>
+            <td class="text-right"><h4><strong>Total: </strong></h4></td>
+            <td class="text-center"><h4><strong>{{ cart.totalPrice.toFixed(2) }}</strong></h4></td>
+            <td><button type = "button" class="btn btn-success" (click)="onAddReceipt()" [disabled]="cart.items.length == 0">Purchase!</button></td>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Exempt</th>
+        <th scope="col">Imported</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currItem of items; let i = index"
+      [item] = "currItem"
+      [index] = "i">
+        <td>{{currItem.name}}</td>
+        <td>{{currItem.basePrice}}</td>
+        <td>{{ currItem.isExempt ? 'Yes' : 'No'}}</td>
+        <td>{{ currItem.isImported ? 'Yes' : 'No'}}</td>
+        <td><form (ngSubmit) = "addToCart(i,f)" #f="ngForm">
+                    <input type="number" id="quantity" class="form-control"
+                    name="quantity"
+                    ngModel
+                    required
+                    pattern="^[1-9]+[0-9]*$">
+                    <button class="btn btn-success pull-right" type ="submit" [disabled]="!f.valid"> Add To Cart
+                    </button>       
+            </form>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+<app-shopping-edit></app-shopping-edit>
+
