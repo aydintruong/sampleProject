@@ -5,8 +5,8 @@ export class itemService{
     itemChanged = new Subject<Item[]>();
 
     private items: Item[] = [
-        new Item("Speaker", 38, false, true, 2),
-        new Item("Calamari", 15, true, false, 5)
+        new Item("Speaker", 38, false, true, 2, 15),
+        new Item("Calamari", 15, true, false, 5, 20)
     ]
 
     getItems(){
@@ -33,6 +33,10 @@ export class itemService{
         this.items.splice(index,1);
         this.itemChanged.next(this.items.slice());
 
+    }
+
+    updateStock(index:number, quantity:number){
+        this.items[index].stock = this.items[index].stock - quantity;
     }
 
 

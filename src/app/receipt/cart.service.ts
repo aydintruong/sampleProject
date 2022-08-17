@@ -4,8 +4,8 @@ import { Cart } from "./cart.model";
 
 export class cartService{
     items: Item[] = [
-        new Item("Speaker", 38, false, true, 2),
-        new Item("Calamari", 15, false, false, 5)
+        new Item("Speaker", 38, false, true, 2, 20),
+        new Item("Calamari", 15, false, false, 5, 15)
     ]
     cartChanged = new Subject<Cart>();
 

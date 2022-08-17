@@ -8,14 +8,16 @@ export class Item{
     public isImported: boolean;
     public quantity: number;
     public totalPriceWithQuantity: number;
+    public stock: number;
 
-    constructor(name: string, price: number, exempt: boolean, imported: boolean, quantity: number) {
+    constructor(name: string, price: number, exempt: boolean, imported: boolean, quantity: number, stock: number) {
         this.addedTax = 0;
         this.name = name;
         this.basePrice = price;
         this.quantity = quantity;
         this.isExempt = exempt;
         this.isImported = imported;
+        this.stock = stock;
         
         if(!exempt){
             this.addedTax = this.addedTax + parseFloat((Math.ceil((this.basePrice * .1) * 20) / 20).toFixed(2));

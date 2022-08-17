@@ -5,6 +5,7 @@
         <th scope="col">Price</th>
         <th scope="col">Exempt</th>
         <th scope="col">Imported</th>
+        <th scope="col">Stock</th>
         <th scope="col">Quantity</th>
       </tr>
     </thead>
@@ -16,13 +17,15 @@
         <td>{{currItem.basePrice}}</td>
         <td>{{ currItem.isExempt ? 'Yes' : 'No'}}</td>
         <td>{{ currItem.isImported ? 'Yes' : 'No'}}</td>
+        <td>{{currItem.stock}}</td>
         <td><form (ngSubmit) = "addToCart(i,f)" #f="ngForm">
                     <input type="number" id="quantity" class="form-control"
                     name="quantity"
                     ngModel
                     required
-                    pattern="^[1-9]+[0-9]*$">
-                    <button class="btn btn-success pull-right" type ="submit" [disabled]="!f.valid"> Add To Cart
+                    pattern="^[1-9]+[0-9]*$"
+                    >
+                    <button class="btn btn-success pull-right" type ="submit" [disabled]="(!f.valid) || f.value.quantity > currItem.stock"> Add To Cart
                     </button>       
             </form>
         </td>

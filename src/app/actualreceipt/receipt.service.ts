@@ -6,14 +6,14 @@ import { Receipt } from "./receipt.model";
 export class receiptService{
 
     items: Item[] = [
-        new Item("Speaker", 38, false, true, 2),
-        new Item("Calamari", 15, false, false, 5),
+        new Item("Speaker", 38, false, true, 2, 20),
+        new Item("Calamari", 15, false, false, 5, 15),
     ]
     
     items2: Item[] = [
-        new Item("Speaker", 38, false, true, 2),
-        new Item("Calamari", 15, false, false, 5),
-        new Item("Coconut Water", 1.85, false, false, 6)
+        new Item("Speaker", 38, false, true, 2, 20),
+        new Item("Calamari", 15, false, false, 5, 15),
+        new Item("Coconut Water", 1.85, false, false, 6, 20)
     ]
 
     cart = new Cart(this.items);

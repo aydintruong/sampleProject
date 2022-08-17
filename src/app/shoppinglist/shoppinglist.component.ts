@@ -38,6 +38,7 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
     const value = form.value;
     const addedItem = this.itemService.getItem(index);
     addedItem.quantity = value.quantity;
+    this.itemService.updateStock(index, addedItem.quantity);
     this.cartService.addToCart(addedItem);
     form.reset();
 

@@ -2,7 +2,7 @@
     <div class ="col-xs-12">
         <form (ngSubmit) = "onAddItem(f)" #f="ngForm">
             <div class="row">
-                <div class ="col-sm-5 form-group">
+                <div class ="col-sm-3 form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" class="form-control"
                     name="name"
@@ -14,6 +14,15 @@
                     <label for="amount">Price</label>
                     <input type="number" id="amount" class="form-control"
                     name="price"
+                    ngModel
+                    required
+                    step="any"
+                    min="0">
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="amount">Stock</label>
+                    <input type="number" id="stock" class="form-control"
+                    name="stock"
                     ngModel
                     required
                     step="any"
